@@ -94,23 +94,23 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
 
-# 原始数据
+# parameter
 e0 = np.linspace(-2, 2, 1000)
 gam = 0.5
 delta = 1e-4
 zim = 1j
 dosa = np.array([-np.imag(e / (np.sqrt((e + zim * delta) ** 2 - 4 * gam ** 2) * abs(e))) / np.pi for e in e0])
 
-# 定义插值函数
+# interpolation function
 def fForRomb(p, e0, dosa):
     interpolator = interp1d(e0, dosa, kind='cubic', fill_value="extrapolate")
     return interpolator(p)
 
-# 生成一组点并计算插值函数在这些点上的值
+# points
 p_values = np.linspace(-2, 2, 1000)
 interp_values = fForRomb(p_values, e0, dosa)
 
-# 绘制插值函数的曲线表示
+# plot
 plt.plot(p_values, interp_values, label='Interpolated Function')
 plt.xlabel('Energy (Ha)')
 plt.ylabel('Density of States (1/Ha)')
