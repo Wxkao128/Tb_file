@@ -80,7 +80,6 @@ ax2.set_xlabel('DOS')
 ax2.set_ylim([-4, 4])
 ax2.grid(True)
 
-# 调整布局
 plt.tight_layout()
 plt.show()
 
