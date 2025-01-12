@@ -488,22 +488,6 @@ def tb_model(atomo,atomb,atoma,atomc,kx,ky,sp_zm=0,b_mag=0,beta_d=0,strain_m=1):
     construct_ham(1,3)
     construct_ham(1,4)
     
-    construct_ham(2,1)  
-    construct_ham(2,2)  
-    construct_ham(2,3)
-    construct_ham(2,4)
-    
-    construct_ham(3,1)  
-    construct_ham(3,2)  
-    construct_ham(3,3)
-    construct_ham(3,4)
-    
-    construct_ham(4,1)  
-    construct_ham(4,2)  
-    construct_ham(4,3)
-    construct_ham(4,4)
-
-    
     onsite_e_field = onsite_e_field(noa,2,0.02,0)
     onsite_s_potnt = onsite_stagger_potential(noa,1,-1)
     #Ham += onsite_e_field  # add electric field 
